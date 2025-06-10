@@ -4,24 +4,24 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.example.apicep.model.UsuariosModel;
-import com.example.apicep.repository.UsuariosRepository;
+import com.example.apicep.model.UsuarioModel;
+import com.example.apicep.repository.UsuarioRepository;
 
 @Service
-public class UsuariosService {
+public class UsuarioService {
 
     @Autowired
-    private UsuariosRepository repository;
+    private UsuarioRepository repository;
 
-    public List<UsuariosModel> listarTodos() {
+    public List<UsuarioModel> listarTodos() {
         return repository.findAll();
     }
 
-    public Optional<UsuariosModel> buscarPorId(Long id) {
+    public Optional<UsuarioModel> buscarPorId(Long id) {
         return repository.findById(id);
     }
 
-    public UsuariosModel salvar(UsuariosModel usuarios) {
+    public UsuarioModel salvar(UsuarioModel usuarios) {
         return repository.save(usuarios);
     }
 
